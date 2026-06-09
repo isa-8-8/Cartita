@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carta de Perdón</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Arial',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+height:100vh;
+overflow:hidden;
+}
+
+.page{
+position:absolute;
+width:100%;
+height:100%;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+}
+
+.page.active{
+display:flex;
+}
+
+h1{
+color:white;
+font-size:2.5rem;
+margin-bottom:20px;
+}
+
+p{
+font-size:1.2rem;
+color:white;
+max-width:700px;
+line-height:1.7;
+}
+
+img{
+max-width:90%;
+max-height:60vh;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+.btn{
+margin-top:30px;
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4f81;
+font-size:1.1rem;
+font-weight:bold;
+cursor:pointer;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+.carta{
+background:white;
+padding:25px;
+border-radius:20px;
+max-width:800px;
+max-height:80vh;
+overflow:auto;
+box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+.carta h2{
+color:#ff4f81;
+margin-bottom:15px;
+}
+
+.carta p{
+color:#444;
+text-align:left;
+margin:0 0 18px 0;
+line-height:1.8;
+}
+</style>
+</head>
+<body>
+
+<!-- Página 1 -->
+<div class="page active" id="page1">
+<img src="https://i.postimg.cc/4yzML9Dh/d584bbd3fabe7df61e0ebfc529dbfb59.jpg" alt="Hola mi amor">
+<h1>Hola mi amor ❤️</h1>
+<button class="btn" onclick="nextPage(2)">Continuar</button>
+</div>
+
+<!-- Página 2 -->
+<div class="page" id="page2">
+  <img src="https://i.postimg.cc/c41rSymK/file-0000000021e471fd97e9921548e7169a.png"
+  alt="💌 Te llegó un mensaje">
+<h1>💌 Te llegó un mensaje</h1>
+<button class="btn" onclick="nextPage(3)">Abrir</button>
+</div>
+
+<!-- Página 3 -->
+<div class="page" id="page3">
+  <img src="https://i.postimg.cc/Zq2MJHZm/a33983289fb0c0758d37a26d7fb90a18.jpg"
+  alt="🤔 ¿Qué dira">
+<h1>🤔 ¿Qué dira?</h1>
+<button class="btn" onclick="nextPage(4)">Descubrir</button>
+</div>
+
+<!-- Página 4 -->
+<div class="page" id="page4">
+<div class="carta">
+<h2>Perdón mi amor ❤️</h2>
+
+<p>
+Holaaaaaaa, mi amor. Hoy en esta carta te quiero pedir perdón desde mi corazón y de la manera más sincera. Sé que ayer no actué de la mejor forma, que incluso mi forma de escribir fue muy mala y entiendo que te hice sentir mal🥺.</p>
+
+<p>No hay excusa para la forma en que estuve actuando y escribiendo. Reconozco que no debí actuar de esa manera y mucho menos actuar así contigo.</p>
+
+<p>Quiero que sepas que para mí eres muy importante, muy especial, muy valiosa y que yo realmente te amo de una manera tan grande♥️✨.</p>
+
+<p>Espero que con el tiempo me puedas perdonar por cómo reaccioné ayer. Realmente nunca ha sido mi intención hacerte daño, sino que siempre mi propósito ha sido hacerte feliz, hacerte sentir segura, tranquila, hacerte sentir amada, seguir creando recuerdos contigo y siempre, pero siempre, protegerte.❤️</p>
+
+<p>Pido perdón y te doy gracias por estarme leyendo en esta cartita.</p>
+
+<p>Te amo muchísimo, mi niña hermosa, y recuerda que mi corazón es tuyo y yo soy solo tuyo ♥️</p>
+
+<button class="btn" onclick="regalo()">
+🎁 presiona para abrir tu regalo mi vida
+</button>
+
+</div>
+</div>
+
+<script>
+function nextPage(num){
+document.querySelectorAll('.page').forEach(p=>{
+p.classList.remove('active');
+});
+document.getElementById('page'+num).classList.add('active');
+}
+
+function regalo(){
+document.body.innerHTML = `
+<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:linear-gradient(135deg,#ffdde1,#ee9ca7);">
+<img src="https://i.postimg.cc/cJF83k61/file-000000003b3471fd97d1f5b75aa11cfb.png"
+style="max-width:95%;max-height:95vh;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,.3);">
+</div>
+`;
+}
+</script>
+
+</body>
+</html>
